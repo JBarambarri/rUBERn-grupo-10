@@ -5,9 +5,9 @@ public class Auto {
     int capacidadMaxima;
     Categoria categoria;
 
-    public Auto(String unaMarca, int unaCapacidadMaxima, Categoria unaCategoria){
-        marca = unaMarca;
-        capacidadMaxima = unaCapacidadMaxima;
+    public Auto(Categoria unaCategoria){
+        marca = Scanner.getString("Ingrese la marca del auto");
+        capacidadMaxima = Scanner.getInt("Ingrese la capacidad maxima del auto");
         categoria = unaCategoria;
     }
 

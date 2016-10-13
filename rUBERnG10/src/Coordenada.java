@@ -1,20 +1,20 @@
 
 public class Coordenada {
 
-    int coordenadaX;
-    int coordenadaY;
+    long coordenadaX;
+    long coordenadaY;
 
 
-    public Coordenada(int unaCoordenadaX, int unaCoordenadaY){
+    public Coordenada(long unaCoordenadaX, long unaCoordenadaY){
         coordenadaX = unaCoordenadaX;
         coordenadaY = unaCoordenadaY;
     }
 
-    public int getCoordenadaX() {
+    public long getCoordenadaX() {
         return coordenadaX;
     }
 
-    public int getCoordenadaY() {
+    public long getCoordenadaY() {
         return coordenadaY;
     }
 }

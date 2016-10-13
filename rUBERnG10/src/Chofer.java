@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Chofer {
 
@@ -15,14 +14,15 @@ public class Chofer {
     }
 
 
-
-    public Chofer(String unNombre, Auto unAuto, Coordenada unaCoordenada, boolean unEstado){
-        nombre = unNombre;
+    public Chofer(Auto unAuto){
+        System.out.print("\n***************Chofer***************/n");
+        nombre = Scanner.getString("Ingrese nombre chofer:\t");
         auto = unAuto;
-        coordenada = unaCoordenada;
-        estado = unEstado;
+        long ubicacionX = Scanner.getLong("Ubicacion X del chofer: \t");
+        long ubicacionY = Scanner.getLong("Ubicacion Y del chofer: \t");
+        coordenada = new Coordenada(ubicacionX, ubicacionY);
+        estado = Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está"));
         choferes.add(this);
-
     }
 
     public String getNombre() {
@@ -49,9 +49,7 @@ public class Chofer {
         this.coordenada = coordenada;
     }
 
-
-    public String recibirPropuesta(SolicitudViaje viaje){
-        System.out.print(viaje.datosDelViaje());
+    public String recibirPropuesta(){
         return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje");
     }
 }

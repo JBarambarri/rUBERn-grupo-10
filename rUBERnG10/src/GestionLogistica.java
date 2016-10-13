@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
+
 public class GestionLogistica {
 
     SolicitudViaje solicitudViaje;
     Jornada jornada;
     int cantidadDePasajeros;
 
-    int distanciaMinima = 10;
+    public int distanciaMinima = 10; //?
 
-    ArrayList<Chofer> choferesTemporal = Chofer.choferes;
+    private ArrayList<Chofer> choferesTemporal = Chofer.getList();
 
     public GestionLogistica(SolicitudViaje solicitudViaje){
         jornada = solicitudViaje.getJornada();
@@ -24,40 +25,31 @@ public class GestionLogistica {
     }
 
 
-    public String datosDelViaje(){
-        return "Ubiacion pasajero" + "\t" + jornada.coordenadaInicial + "\n" +
-        "Destino" + "\t" + jornada.coordenadaFinal + "\n" +
-        "Cantidad de pasajeros:" + "\t" + cantidadDePasajeros;
-    }
-
-
     private void enviarViajeAChofer(){
+        for(int j=0; j<choferesTemporal.size(); j++){
+            if (!choferesTemporal.get(j).estado || cantidadDePasajeros > choferesTemporal.get(j).auto.capacidadMaxima ||
+                    Calculadora.dist2Coord(choferesTemporal.get(j).getCoordenada(), jornada.coordenadaInicial) >= distanciaMinima){
+                choferesTemporal.remove(j);
+            }
+
+        }
         if(choferesTemporal.size()==0) {
             System.out.println("No hay choferes disponibles");
         }
         for(int i=0; i<choferesTemporal.size(); i++){
             if (choferesTemporal.get(i).estado && cantidadDePasajeros <= choferesTemporal.get(i).auto.capacidadMaxima &&
                     Calculadora.dist2Coord(choferesTemporal.get(i).getCoordenada(), jornada.coordenadaInicial) < distanciaMinima) {
-
-                String s = choferesTemporal.get(i).recibirPropuesta(solicitudViaje);
-                if (interpreter(s)) {
+                System.out.print(solicitudViaje.datosDelViaje());
+                System.out.println("Chofer:  " + choferesTemporal.get(i).getNombre());
+                String s = choferesTemporal.get(i).recibirPropuesta();
+                if (Interpreter.interpreter(s)) {
                     choferAcepta(i);
                     break;
                 }else{
                     choferNoAcepta(i);
                 }
-            }
-        }
-    }
-
-    private boolean interpreter(String s){
-        if(Objects.equals(s, "si")){
-            return true;
-        }else{
-            if(Objects.equals(s, "no")) {
-                return false;
             }else{
-                throw new TextoIngresadoNoValido();
+                choferesTemporal.remove(i);
             }
         }
     }
@@ -70,9 +62,7 @@ public class GestionLogistica {
 
     private void choferAcepta(int i) {
         choferesTemporal.get(i).coordenada = jornada.coordenadaFinal;
-
         new GestionEconomica();
     }
-
 
 }
