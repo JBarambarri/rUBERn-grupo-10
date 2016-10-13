@@ -8,8 +8,7 @@ public class Jornada {
     public Jornada(Coordenada unaCoordenadaInicial, Coordenada unaCoordenadaFinal){
         coordenadaFinal = unaCoordenadaFinal;
         coordenadaInicial = unaCoordenadaInicial;
-        distancia = Math.sqrt((Math.pow(coordenadaInicial.getCoordenadaX()-coordenadaFinal.getCoordenadaX(), 2)) +
-        (Math.pow(coordenadaInicial.getCoordenadaY()-coordenadaFinal.getCoordenadaY(), 2)));
+        distancia = Calculadora.dist2Coord(unaCoordenadaInicial, unaCoordenadaFinal);
     }
 
     public Coordenada getCoordenadaInicial() {

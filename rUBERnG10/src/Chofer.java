@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Chofer {
 
@@ -6,12 +8,21 @@ public class Chofer {
     Coordenada coordenada;
     boolean estado;
 
+    public static ArrayList<Chofer> choferes = new ArrayList<>();
+
+    public static ArrayList<Chofer> getList(){
+        return choferes;
+    }
+
+
 
     public Chofer(String unNombre, Auto unAuto, Coordenada unaCoordenada, boolean unEstado){
         nombre = unNombre;
         auto = unAuto;
         coordenada = unaCoordenada;
         estado = unEstado;
+        choferes.add(this);
+
     }
 
     public String getNombre() {
@@ -36,5 +47,11 @@ public class Chofer {
 
     public void setCoordenada(Coordenada coordenada) {
         this.coordenada = coordenada;
+    }
+
+
+    public String recibirPropuesta(SolicitudViaje viaje){
+        System.out.print(viaje.datosDelViaje());
+        return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje");
     }
 }

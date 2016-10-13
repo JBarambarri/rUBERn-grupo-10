@@ -21,5 +21,10 @@ public class Cliente {
     public void setUbicacion(Coordenada ubicacion) {
         this.ubicacion = ubicacion;
     }
+
+    public SolicitudViaje pedirViaje(Coordenada unaCoordenadaFinal, int ctdadPasajeros){
+        Jornada jornada = new Jornada(ubicacion, unaCoordenadaFinal);
+        return new SolicitudViaje(jornada, ctdadPasajeros);
+    }
     
 }
