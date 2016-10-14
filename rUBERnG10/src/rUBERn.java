@@ -15,7 +15,7 @@ public class rUBERn {
         boolean b = true;
 
         while (b) {
-            int i = Scanner.getInt("\nIngrese el numero correspondiente a la opcion que desee");
+            int i = Scanner.getInt("\nIngrese el numero correspondiente a la opcion que desee  ");
 
             switch (i) {
                 case 1:
