@@ -15,13 +15,13 @@ public class Chofer {
 
 
     public Chofer(Auto unAuto){
-        System.out.print("\n***************Chofer***************/n");
+        System.out.print("\n***************Chofer***************\n");
         nombre = Scanner.getString("Ingrese nombre chofer:\t");
         auto = unAuto;
         long ubicacionX = Scanner.getLong("Ubicacion X del chofer: \t");
         long ubicacionY = Scanner.getLong("Ubicacion Y del chofer: \t");
         coordenada = new Coordenada(ubicacionX, ubicacionY);
-        estado = Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está"));
+        estado = Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está: \t"));
         choferes.add(this);
     }
 
@@ -50,6 +50,6 @@ public class Chofer {
     }
 
     public String recibirPropuesta(){
-        return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje");
+        return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje:\t");
     }
 }

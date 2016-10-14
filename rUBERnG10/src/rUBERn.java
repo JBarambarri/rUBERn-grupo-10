@@ -5,16 +5,19 @@ public class rUBERn {
 
     public static void main(String args[]) {
 
-        System.out.println("1. Añadir Cliente ");
-        System.out.println("2. Añadir Chofer");
-        System.out.println("3. Añadir Auto ");
-        System.out.println("4. Añadir Categoria");
-        System.out.println("5. Pedir Viaje");
-        System.out.println("6. Salir");
-
         boolean b = true;
 
         while (b) {
+
+            System.out.println();
+            System.out.println("1. Añadir Cliente ");
+            System.out.println("2. Añadir Chofer");
+            System.out.println("3. Añadir Auto ");
+            System.out.println("4. Añadir Categoria");
+            System.out.println("5. Pedir Viaje");
+            System.out.println("6. Salir");
+
+
             int i = Scanner.getInt("\nIngrese el numero correspondiente a la opcion que desee  ");
 
             switch (i) {
@@ -54,12 +57,12 @@ public class rUBERn {
     }
 
     private static Auto generarAuto() {
-        System.out.println("Datos del auto:\n");
+        System.out.println("\nDatos del auto:");
         return new Auto(generarCategoria());
     }
 
     private static Categoria generarCategoria(){
-        return new Categoria(Scanner.getString("Ingrese el nombre de la categoria del auto"), Scanner.getInt("Ingrese el porcentaje de costo adicional"));
+        return new Categoria();
     }
 
     private static SolicitudViaje pedirViaje(Cliente unCliente){

@@ -6,8 +6,8 @@ public class Auto {
     Categoria categoria;
 
     public Auto(Categoria unaCategoria){
-        marca = Scanner.getString("Ingrese la marca del auto");
-        capacidadMaxima = Scanner.getInt("Ingrese la capacidad maxima del auto");
+        marca = Scanner.getString("Ingrese la marca del auto: \t");
+        capacidadMaxima = Scanner.getInt("Ingrese la capacidad maxima del auto: \t");
         categoria = unaCategoria;
     }
 

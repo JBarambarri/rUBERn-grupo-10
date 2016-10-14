@@ -4,9 +4,9 @@ public class Categoria {
     String nombre;
     int porcentajeDeCostoAdicional;
 
-    public Categoria(String unNombre, int unPorcentajeDeCostoAdicional){
-        nombre = unNombre;
-        porcentajeDeCostoAdicional = unPorcentajeDeCostoAdicional;
+    public Categoria(){
+        nombre = Scanner.getString("Ingrese el nombre de la categoria del auto:\t");
+        porcentajeDeCostoAdicional = Scanner.getInt("Ingrese el porcentaje de costo adicional:\t");
     }
 
     public String getNombre() {
