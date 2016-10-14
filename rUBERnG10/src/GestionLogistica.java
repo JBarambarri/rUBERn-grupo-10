@@ -34,7 +34,7 @@ public class GestionLogistica {
 
         }
         if(choferesTemporal.size()==0) {
-            System.out.println("No hay choferes disponibles");
+            System.out.println("\nNo hay choferes disponibles");
         }
         for(int i=0; i<choferesTemporal.size(); i++){
             if (choferesTemporal.get(i).estado && cantidadDePasajeros <= choferesTemporal.get(i).auto.capacidadMaxima &&
@@ -64,5 +64,4 @@ public class GestionLogistica {
         choferesTemporal.get(i).coordenada = jornada.coordenadaFinal;
         new GestionEconomica();
     }
-
 }

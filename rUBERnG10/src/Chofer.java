@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Chofer {
+public class Chofer implements Persona{
 
     String nombre;
     Auto auto;
@@ -12,6 +12,8 @@ public class Chofer {
     public static ArrayList<Chofer> getList(){
         return choferes;
     }
+
+    ArrayList<Historial> historialCliente = new ArrayList<>();
 
 
     public Chofer(Auto unAuto){
@@ -29,12 +31,19 @@ public class Chofer {
         return nombre;
     }
 
-    public Auto getAuto() {
-        return auto;
-    }
-
     public Coordenada getCoordenada() {
         return coordenada;
+    }
+
+    private void agregarAHistorial(double cantidad){
+        Historial historial = new Historial(cantidad);
+        historialCliente.add(historial);
+    }
+
+
+
+    public Auto getAuto() {
+        return auto;
     }
 
     public boolean isEstado() {
@@ -48,6 +57,8 @@ public class Chofer {
     public void setCoordenada(Coordenada coordenada) {
         this.coordenada = coordenada;
     }
+
+
 
     public String recibirPropuesta(){
         return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje:\t");

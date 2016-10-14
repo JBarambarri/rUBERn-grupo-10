@@ -1,4 +1,4 @@
-public class Cliente {
+public class Cliente implements Persona{
 
     String nombre;
     Coordenada ubicacion;
