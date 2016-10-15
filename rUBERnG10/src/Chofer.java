@@ -7,24 +7,14 @@ public class Chofer implements Persona{
     Coordenada coordenada;
     boolean estado;
 
-    public static ArrayList<Chofer> choferes = new ArrayList<>();
 
-    public static ArrayList<Chofer> getList(){
-        return choferes;
-    }
-
-    ArrayList<Historial> historialCliente = new ArrayList<>();
-
-
-    public Chofer(Auto unAuto){
+    public Chofer(String unNombre, long unaUbicacionX, long unaUbicacionY, Auto unAuto, Boolean unEstado){
         System.out.print("\n***************Chofer***************\n");
-        nombre = Scanner.getString("Ingrese nombre chofer:\t");
+        nombre = unNombre;
         auto = unAuto;
-        long ubicacionX = Scanner.getLong("Ubicacion X del chofer: \t");
-        long ubicacionY = Scanner.getLong("Ubicacion Y del chofer: \t");
-        coordenada = new Coordenada(ubicacionX, ubicacionY);
-        estado = Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está: \t"));
-        choferes.add(this);
+        coordenada = new Coordenada(unaUbicacionX, unaUbicacionY);
+        estado = unEstado;
+        BaseDeDatos.choferes.add(this);
     }
 
     public String getNombre() {
@@ -33,11 +23,6 @@ public class Chofer implements Persona{
 
     public Coordenada getCoordenada() {
         return coordenada;
-    }
-
-    private void agregarAHistorial(double cantidad){
-        Historial historial = new Historial(cantidad);
-        historialCliente.add(historial);
     }
 
 

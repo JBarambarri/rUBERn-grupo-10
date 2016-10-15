@@ -1,10 +1,11 @@
-public class SolicitudViaje {
+
+public class Viaje {
 
     Jornada jornada;
     int cantidadDePasajeros;
 
 
-    public SolicitudViaje(Jornada unaJornada, int unaCantidadDePasajeros){
+    public Viaje(Jornada unaJornada, int unaCantidadDePasajeros){
         jornada = unaJornada;
         cantidadDePasajeros = unaCantidadDePasajeros;
         new GestionLogistica(this);

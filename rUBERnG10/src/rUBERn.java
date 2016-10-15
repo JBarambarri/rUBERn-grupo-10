@@ -49,24 +49,35 @@ public class rUBERn {
 
 
     private static Cliente generarCliente(){
-        return new Cliente();
+        return new Cliente(Scanner.getLong("Ubicacion X del cliente: \t"),
+        Scanner.getLong("Ubicacion Y del cliente: \t"),
+        Scanner.getString("Ingrese el nombre del cliente: \t") );
     }
 
     private static Chofer generarChofer(){
-        return new Chofer(generarAuto());
+        return new Chofer(Scanner.getString("Ingrese el nombre del chofer: \t"),
+        Scanner.getLong("Ubicacion X del chofer: \t"),
+        Scanner.getLong("Ubicacion Y del chofer: \t"),
+        generarAuto(),
+        Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está: \t")));
     }
 
     private static Auto generarAuto() {
-        System.out.println("\nDatos del auto:");
-        return new Auto(generarCategoria());
+        System.out.println("\n\033[4mDatos del auto:\033[0m");
+        return new Auto(Scanner.getString("Ingrese la marca del auto \t"),
+        Scanner.getInt("Ingrese la capcidad maxima del auto: \t"),
+        generarCategoria());
     }
 
     private static Categoria generarCategoria(){
-        return new Categoria();
+        return new Categoria(Scanner.getString("Ingrese el nombre de la categoria del auto:\t"),
+        Scanner.getInt("Ingrese el porcentaje de costo adicional:\t"));
     }
 
-    private static SolicitudViaje pedirViaje(Cliente unCliente){
-        return unCliente.pedirViaje();
+    private static Viaje pedirViaje(Cliente unCliente){
+        return unCliente.pedirViaje(
+        Scanner.getLong("Ingrese el destino en X: \t"),
+        Scanner.getLong("Ingrese el destino en Y: \t"),
+        Scanner.getInt("Ingrese la cantidad de pasajeros: \t"));
     }
-
 }

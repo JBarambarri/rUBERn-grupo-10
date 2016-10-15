@@ -4,13 +4,14 @@ public class Cliente implements Persona{
     Coordenada ubicacion;
 
 
-    public Cliente(){
+    public Cliente(long unaUbicacionX, long unaUbicacionY, String unNombre) {
         System.out.print("\n***************Cliente***************\n");
-        nombre = Scanner.getString("Nombre del cliente: \t");
-        long ubicacionX = Scanner.getLong("Ubicacion X del cliente: \t");
-        long ubicacionY = Scanner.getLong("Ubicacion Y del cliente: \t");
-        ubicacion = new Coordenada(ubicacionX, ubicacionY);
+        nombre = unNombre;
+        ubicacion = new Coordenada(unaUbicacionX, unaUbicacionY);
+        BaseDeDatos.clientes.add(this);
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -24,12 +25,10 @@ public class Cliente implements Persona{
         this.ubicacion = ubicacion;
     }
 
-    public SolicitudViaje pedirViaje(){
+    public Viaje pedirViaje(long unaUbicacionDestinoX, long unaUbicacionDestinoY, int unaCantidadDePasajeros){
         System.out.println();
-        long coordenadaDestinoX = Scanner.getLong("Ingrese destino en X:\t");
-        long coordenadaDestinoY = Scanner.getLong("Ingrese destino en Y:\t");
-        Jornada jornada = new Jornada(ubicacion, new Coordenada(coordenadaDestinoX, coordenadaDestinoY));
-        return new SolicitudViaje(jornada, Scanner.getInt("Ingrese la cantidad de pasajeros:\t"));
+        Jornada jornada = new Jornada(ubicacion, new Coordenada(unaUbicacionDestinoX, unaUbicacionDestinoY));
+        return new Viaje(jornada, unaCantidadDePasajeros);
     }
 
 }
