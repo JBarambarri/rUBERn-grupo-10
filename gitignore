@@ -39,7 +39,8 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-## What Bau ruined:
+
+# What Bau ruined:
 dir_to_ignore/_windows
 dir_to_ignore/inspection
 IntelliLang.xml
