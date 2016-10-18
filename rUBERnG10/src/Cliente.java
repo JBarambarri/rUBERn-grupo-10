@@ -5,12 +5,10 @@ public class Cliente implements Persona{
 
 
     public Cliente(long unaUbicacionX, long unaUbicacionY, String unNombre) {
-        System.out.print("\n***************Cliente***************\n");
         nombre = unNombre;
         ubicacion = new Coordenada(unaUbicacionX, unaUbicacionY);
         BaseDeDatos.clientes.add(this);
     }
-
 
 
     public String getNombre() {
@@ -24,6 +22,7 @@ public class Cliente implements Persona{
     public void setUbicacion(Coordenada ubicacion) {
         this.ubicacion = ubicacion;
     }
+
 
     public Viaje pedirViaje(long unaUbicacionDestinoX, long unaUbicacionDestinoY, int unaCantidadDePasajeros){
         System.out.println();

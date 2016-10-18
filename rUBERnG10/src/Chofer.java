@@ -6,6 +6,8 @@ public class Chofer implements Persona{
     Auto auto;
     Coordenada coordenada;
     boolean estado;
+    double saldo;
+
 
 
     public Chofer(String unNombre, long unaUbicacionX, long unaUbicacionY, Auto unAuto, Boolean unEstado){
@@ -14,6 +16,7 @@ public class Chofer implements Persona{
         auto = unAuto;
         coordenada = new Coordenada(unaUbicacionX, unaUbicacionY);
         estado = unEstado;
+        saldo = 0;
         BaseDeDatos.choferes.add(this);
     }
 
@@ -23,6 +26,11 @@ public class Chofer implements Persona{
 
     public Coordenada getCoordenada() {
         return coordenada;
+    }
+
+
+    public double getSaldo() {
+        return saldo;
     }
 
 

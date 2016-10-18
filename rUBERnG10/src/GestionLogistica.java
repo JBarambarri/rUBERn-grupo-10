@@ -12,10 +12,10 @@ public class GestionLogistica {
 
     private ArrayList<Chofer> choferesTemporal = BaseDeDatos.choferes;
 
-    public GestionLogistica(Viaje  viaje){
-        jornada =  viaje.getJornada();
+    public GestionLogistica(Viaje viaje){
+        jornada = viaje.getJornada();
         cantidadDePasajeros = viaje.getCantidadDePasajeros();
-        this.viaje =  viaje;
+        this.viaje = viaje;
         enviarViajeAChofer();
     }
 
@@ -52,15 +52,16 @@ public class GestionLogistica {
         }
     }
 
-
     private void choferNoAcepta(int i) {
         choferesTemporal.remove(i);
         enviarViajeAChofer();
     }
 
+
     private void choferAcepta(int i) {
         choferesTemporal.get(i).coordenada = jornada.coordenadaFinal;
-        new GestionEconomica();
+        new GestionEconomica(choferesTemporal.get(i), viaje);
+
         BaseDeDatos.viajes.add(new Viaje(jornada, cantidadDePasajeros));
     }
 
