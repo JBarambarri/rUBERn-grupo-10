@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 public class GestionLogistica {
@@ -70,4 +71,10 @@ public class GestionLogistica {
         return choferesTemporal.get(i).estado && cantidadDePasajeros <= choferesTemporal.get(i).auto.capacidadMaxima &&
         Calculadora.dist2Coord(choferesTemporal.get(i).getCoordenada(), jornada.coordenadaInicial) < distanciaMinima;
     }
+
+
+
+
+
+
 }

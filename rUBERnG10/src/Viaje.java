@@ -1,14 +1,17 @@
+import org.joda.time.DateTime;
 
 public class Viaje {
 
     Jornada jornada;
     int cantidadDePasajeros;
+    DateTime dateAndTime;
 
 
     public Viaje(Jornada unaJornada, int unaCantidadDePasajeros){
         jornada = unaJornada;
         cantidadDePasajeros = unaCantidadDePasajeros;
         new GestionLogistica(this);
+        this.dateAndTime = DateTime.now();
     }
 
     public String datosDelViaje(){
