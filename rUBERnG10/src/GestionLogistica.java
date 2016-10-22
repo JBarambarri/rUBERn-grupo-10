@@ -8,15 +8,20 @@ public class GestionLogistica {
     Viaje viaje;
     Jornada jornada;
     int cantidadDePasajeros;
+    Cliente cliente;
+    String codigoViaje;
 
-    public int distanciaMinima = 10; //?
+    public int distanciaMinima = 100; //?
 
     private ArrayList<Chofer> choferesTemporal = BaseDeDatos.choferes;
 
-    public GestionLogistica(Viaje viaje){
-        jornada = viaje.getJornada();
-        cantidadDePasajeros = viaje.getCantidadDePasajeros();
-        this.viaje = viaje;
+    public GestionLogistica(Viaje unViaje, Cliente unCliente){
+        jornada = unViaje.getJornada();
+        cantidadDePasajeros = unViaje.getCantidadDePasajeros();
+        viaje = unViaje;
+        cliente = unCliente;
+        codigoViaje = viaje.getCodigoViaje();
+
         enviarViajeAChofer();
     }
 
@@ -38,6 +43,10 @@ public class GestionLogistica {
         }
         for(int i=0; i<choferesTemporal.size(); i++){
             if (choferCumpleCondiciones(i)) {
+                for(int j=0; j<25; j++){
+                    System.out.println();
+                }
+                System.out.println("\n**********\033[1mCHOFER\033[0m**********");
                 System.out.print(viaje.datosDelViaje());
                 System.out.println("Chofer:  " + choferesTemporal.get(i).getNombre());
                 String s = choferesTemporal.get(i).recibirPropuesta();
@@ -61,9 +70,10 @@ public class GestionLogistica {
 
     private void choferAcepta(int i) {
         choferesTemporal.get(i).coordenada = jornada.coordenadaFinal;
-        new GestionEconomica(choferesTemporal.get(i), viaje);
 
-        BaseDeDatos.viajes.add(new Viaje(jornada, cantidadDePasajeros));
+        new GestionEconomica(choferesTemporal.get(i), viaje, cliente);
+
+        BaseDeDatos.viajesRealizados.add(new ViajesRealizados(choferesTemporal.get(i), viaje ));
     }
 
 
@@ -71,10 +81,6 @@ public class GestionLogistica {
         return choferesTemporal.get(i).estado && cantidadDePasajeros <= choferesTemporal.get(i).auto.capacidadMaxima &&
         Calculadora.dist2Coord(choferesTemporal.get(i).getCoordenada(), jornada.coordenadaInicial) < distanciaMinima;
     }
-
-
-
-
 
 
 }

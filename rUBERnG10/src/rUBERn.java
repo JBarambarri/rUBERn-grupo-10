@@ -1,8 +1,5 @@
 public class rUBERn {
 
-    int distanciaMinima = 10;
-
-
     public static void main(String args[]) {
 
         boolean b = true;
@@ -10,35 +7,25 @@ public class rUBERn {
         while (b) {
 
             System.out.println("1. Cliente ");
-            System.out.println("2. Añadir Chofer");
-            System.out.println("3. Añadir Auto ");
-            System.out.println("4. Añadir Categoria");
-            System.out.println("5. Pedir Viaje");
-            System.out.println("6. Salir");
+            System.out.println("2. Chofer ");
+            System.out.println("3. Rubern ");
+            System.out.println("4. Salir");
 
 
-            int i = Scanner.getInt("\nIngrese el numero correspondiente a la opcion que desee:\t");
+            int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
 
             switch (i) {
                 case 1:
-                    new OpcionesCliente();    //abrir el menu del cliente
+                    new OpcionesCliente();
                     break;
                 case 2:
-                    generarChofer();
+                    new OpcionesChofer();
                     break;
                 case 3:
-                    generarAuto();
+                    new OpcionesRubern();
                     break;
                 case 4:
-                    generarCategoria();
-                    break;
-                case 5:
-                    break;
-                case 6:
                     b = false;
-                    break;
-                case 7:
-                    terminarViaje();
                     break;
 
                 default:
@@ -68,9 +55,5 @@ public class rUBERn {
         return new Categoria(Scanner.getString("Ingrese el nombre de la categoria del auto:\t"),
         Scanner.getInt("Ingrese el porcentaje de costo adicional:\t"));
     }
-
-
-    private static void terminarViaje(){}
-
 
 }

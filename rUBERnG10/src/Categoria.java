@@ -1,5 +1,5 @@
 
-public class Categoria {
+public class Categoria{
 
     String nombre;
     int porcentajeDeCostoAdicional;

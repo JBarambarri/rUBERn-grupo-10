@@ -14,7 +14,8 @@ public abstract class Formulario {
 
 
     private void blanquearPantalla() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        for(int i=0; i<25; i++){
+            System.out.println();
+        }
     }
 }

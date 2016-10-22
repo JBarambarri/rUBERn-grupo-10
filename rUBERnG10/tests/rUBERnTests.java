@@ -15,7 +15,13 @@ public class rUBERnTests {
         assertEquals(22.36, distancia, 0.1);
     }
 
-    //Tests no funcionan si hay Scanner...
+
+    @Test
+    public void test002() {         // clase no programada por nosotros
+        RandomString s = new RandomString(5);
+        System.out.print(s.nextString());
+
+    }
 
 
 }

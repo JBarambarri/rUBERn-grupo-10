@@ -2,17 +2,21 @@
 public class GestionEconomica {
 
     Chofer chofer;
+    Cliente cliente;
     Viaje viaje;
     double saldoUber = 0;
+    int bajadaBandera = 15;
 
-    public GestionEconomica(Chofer unChofer, Viaje unViaje){
+    public GestionEconomica(Chofer unChofer, Viaje unViaje, Cliente unCliente){
         chofer = unChofer;
         viaje = unViaje;
+        cliente = unCliente;
         hacerTransferencias();
     }
 
     public void hacerTransferencias(){
-        double costoViaje = 15 + viaje.getJornada().distancia/100;
+        double costoViaje = bajadaBandera + viaje.getJornada().distancia/100;
+        transferenciaCliente(costoViaje);
         transferenciaChofer(costoViaje);
         transferenciaUber(costoViaje);
     }
@@ -23,5 +27,9 @@ public class GestionEconomica {
 
     private void transferenciaUber(double costoViaje) {
         saldoUber += viaje.getJornada().getDistancia()*costoViaje*0.1;
+    }
+
+    private void transferenciaCliente(double costoViaje){
+        cliente.getTarjeta().setSaldo(costoViaje);
     }
 }

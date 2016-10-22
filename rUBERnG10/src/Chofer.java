@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Chofer implements Persona{
+public class Chofer {
 
     String nombre;
     Auto auto;
