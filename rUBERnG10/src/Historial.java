@@ -1,6 +1,8 @@
 import static java.lang.StrictMath.round;
 
 public class Historial {
+
+
     
     public Historial(Cliente unCliente){
         historialPorCliente(unCliente);
@@ -18,7 +20,7 @@ public class Historial {
     private static void historialCliente(int i, Cliente unCliente) {
         Viaje viaje = BaseDeDatos.viajesRealizados.get(i).getViaje();
         System.out.println(
-            viaje.getCodigoViaje() + "\n" + "Pago" + "\n" +
+            "Codigo unico del viaje: " + viaje.getCodigoViaje() + "\n" + "Pago" + "\n" +
             viaje.getDateAndTime().getYear() + "/" + viaje.getDateAndTime().getMonthOfYear()
             + "/" + viaje.getDateAndTime().getDayOfMonth() + "\n" +
             viaje.getDateAndTime().getHourOfDay() + ":" + viaje.getDateAndTime().getMinuteOfHour() + "\n" +
@@ -51,7 +53,7 @@ public class Historial {
                 viaje.getDateAndTime().getYear() + "/" + viaje.getDateAndTime().getMonthOfYear()
                 + "/" + viaje.getDateAndTime().getDayOfMonth() + "\n" +
                 viaje.getDateAndTime().getHourOfDay() + ":" + viaje.getDateAndTime().getMinuteOfHour() + "\n" +
-                "Numero de tarjeta: disponible solo para cliente"  +
+                "Numero de tarjeta: disponible solo para cliente\n"  +
                 "Cobro de viaje desde (" + viaje.getJornada().getCoordenadaInicial().getCoordenadaX() + "," +
                 viaje.getJornada().getCoordenadaInicial().getCoordenadaY() + ") hasta (" +
                 viaje.getJornada().getCoordenadaFinal().getCoordenadaX() + "," +
@@ -59,5 +61,4 @@ public class Historial {
                 round((viaje.getJornada().getDistancia()/100)*0.9) + "$" + "\n");
 
     }
-
 }

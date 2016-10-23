@@ -13,7 +13,9 @@ public class GestionLogistica {
 
     public int distanciaMinima = 100; //?
 
+
     private ArrayList<Chofer> choferesTemporal = BaseDeDatos.choferes;
+
 
     public GestionLogistica(Viaje unViaje, Cliente unCliente){
         jornada = unViaje.getJornada();
@@ -22,12 +24,10 @@ public class GestionLogistica {
         cliente = unCliente;
         codigoViaje = viaje.getCodigoViaje();
 
+        //BubbleSortChoferes bsc = new BubbleSortChoferes(jornada, BaseDeDatos.choferes);
+        //choferesTemporal = bsc.getChoferesFiltrado();
         enviarViajeAChofer();
-    }
 
-
-    public void setDistanciaMinima(int nuevaDistanciaMinima){
-        distanciaMinima = nuevaDistanciaMinima;
     }
 
 
@@ -56,6 +56,7 @@ public class GestionLogistica {
                 }else{
                     choferNoAcepta(i);
                 }
+                break;
             }else{
                 choferesTemporal.remove(i);
             }
@@ -81,6 +82,5 @@ public class GestionLogistica {
         return choferesTemporal.get(i).estado && cantidadDePasajeros <= choferesTemporal.get(i).auto.capacidadMaxima &&
         Calculadora.dist2Coord(choferesTemporal.get(i).getCoordenada(), jornada.coordenadaInicial) < distanciaMinima;
     }
-
 
 }

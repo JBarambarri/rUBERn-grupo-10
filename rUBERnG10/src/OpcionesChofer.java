@@ -6,6 +6,17 @@ public class OpcionesChofer extends Formulario{
         while(b) {
             show();
             int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+            try{
+                switch (i){
+                    case 1: case 2: case 3: case 4: case 5: break;//sth
+                    default:
+                        throw new OpcionIngresadaNoValida();
+                }
+            }
+            catch (OpcionIngresadaNoValida o){
+                System.out.println("Ingrese una opcion valida por favor");
+                new OpcionesChofer();
+            }
             switch (i) {
                 case 1:
                     if(BaseDeDatos.autos.size()==0){
@@ -38,8 +49,6 @@ public class OpcionesChofer extends Formulario{
                 case 5:
                     b = false;
                     break;
-                default:
-                    throw new OpcionIngresadaNoValida();
             }
         }
     }
@@ -59,49 +68,10 @@ public class OpcionesChofer extends Formulario{
         System.out.println("5. Salir");
     }
 
-    private static Chofer generarChofer(){
-        return new Chofer(
-                Scanner.getString("Nombre del chofer:\t"),
-                Scanner.getLong("Ubicacion X del chofer:\t"),
-                Scanner.getLong("Ubicacion Y del chofer:\t"),
-                elegirAuto(),
-                Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está:\t")));
-    }
-
-    private static Auto generarAuto() {
-        System.out.println("\n\033[4mDatos del auto:\033[0m");
-        return new Auto(
-                Scanner.getString("Marca del auto:\t"),
-                Scanner.getInt("Capcidad maxima del auto:\t"),
-                elegirCategoria());
-    }
-
-    private static Categoria generarCategoria(){
-        return new Categoria(
-                Scanner.getString("Nombre de la categoria del auto:\t"),
-                Scanner.getInt("Porcentaje de costo adicional:\t"));
-    }
 
     private static void terminarViaje(Chofer unChofer){
         unChofer.setEstado(true);
     }
 
-    private static Chofer elegirChofer(){
-        BaseDeDatos.mostrarChoferes();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.choferes.get(i-1);
-    }
-
-    private static Auto elegirAuto(){
-        BaseDeDatos.mostrarAutos();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.autos.get(i-1);
-    }
-
-    private static Categoria elegirCategoria(){
-        BaseDeDatos.mostrarCategorias();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.categorias.get(i-1);
-    }
 
 }

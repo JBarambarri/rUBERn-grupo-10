@@ -6,6 +6,17 @@ public class OpcionesCliente extends Formulario{
         while(b) {
             show();
             int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+            try{
+                switch (i){
+                    case 1: case 2: case 3: break;
+                    default:
+                        throw new OpcionIngresadaNoValida();
+                }
+            }
+            catch (OpcionIngresadaNoValida o){
+                System.out.println("Ingrese una opcion valida por favor");
+                new OpcionesCliente();
+            }
             switch (i) {
                 case 1:
                     generarCliente();
@@ -20,19 +31,10 @@ public class OpcionesCliente extends Formulario{
                 case 3:
                     b = false;
                     break;
-                default:
-                    throw new OpcionIngresadaNoValida();
             }
         }
     }
 
-
-    private Cliente generarCliente(){
-        return new Cliente(Scanner.getLong("Ubicacion X del cliente: \t"),
-        Scanner.getLong("Ubicacion Y del cliente: \t"),
-        Scanner.getString("Nombre del cliente: \t") ,
-        new Tarjeta(Scanner.getString("\n\033[4mDatos de la tarjeta:\033[0m\nNombre del banco: \t"), Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
-    }
 
     private static Viaje pedirViaje(Cliente unCliente){
         return unCliente.pedirViaje(
@@ -52,30 +54,6 @@ public class OpcionesCliente extends Formulario{
         System.out.println("2. Pedir Viaje");
         System.out.println("3. Salir");
     }
-
-    private Cliente elegirCliente(){
-        mostrarClientes();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente. Si no se encuentra ingrese 0:\t");
-        try{
-            BaseDeDatos.clientes.get(i-1);
-        }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Ingrese sus datos:");
-            generarCliente();
-            i = BaseDeDatos.clientes.size();
-        }
-        return BaseDeDatos.clientes.get(i-1);
-
-
-    }
-
-    private static void mostrarClientes(){
-        for(int i=0; i<BaseDeDatos.clientes.size(); i++){
-            System.out.println("Cliente " + (i+1) + ": "+ BaseDeDatos.clientes.get(i).getNombre() + "\n");
-        }
-    }
-
 }
 
-//*nota respecto al saldo de la tarjeta: no corresponde que el cliente diga cuanto saldo tiene, por lo que se le asigno
-//un saldo inicial de 1000$
+

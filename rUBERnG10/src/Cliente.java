@@ -34,7 +34,7 @@ public class Cliente {
     public Viaje pedirViaje(long unaUbicacionDestinoX, long unaUbicacionDestinoY, int unaCantidadDePasajeros){
         System.out.println();
         Jornada jornada = new Jornada(ubicacion, new Coordenada(unaUbicacionDestinoX, unaUbicacionDestinoY));
-        return new Viaje(jornada, unaCantidadDePasajeros, this, new RandomString(5).nextString());
+        return new Viaje(jornada, unaCantidadDePasajeros, this, new RandomString(6).nextString());
     }
 
 }

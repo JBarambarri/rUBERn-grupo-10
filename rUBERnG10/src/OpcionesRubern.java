@@ -2,16 +2,32 @@
 public class OpcionesRubern extends Formulario{
 
     public OpcionesRubern(){
-        boolean b=true;
+        boolean b = true;
         while(b){
             show();
             int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+            if(BaseDeDatos.viajesRealizados.size()==0){
+                System.out.println("\nNo hay viajes realizados\n");
+                i=3;
+            }
+            try{
+                switch (i){
+                    case 1: case 2: case 3: break;//sth
+                    default:
+                        throw new OpcionIngresadaNoValida();
+                }
+            }
+            catch (OpcionIngresadaNoValida o){
+                System.out.println("Ingrese una opcion valida por favor");
+                new OpcionesRubern();
+            }
             switch (i){
                 case 1:
                     new Historial(elegirCliente());
                     break;
                 case 2:
                     new Historial(elegirChofer());
+                    break;
                 case 3:
                     b = false;
                     break;
@@ -30,19 +46,4 @@ public class OpcionesRubern extends Formulario{
         System.out.println("2. Mostrar historial por chofer");
         System.out.println("3. Salir");
     }
-
-
-    private Cliente elegirCliente() {
-        BaseDeDatos.mostrarClientes();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.clientes.get(i-1);
-    }
-
-    private Chofer elegirChofer() {
-        BaseDeDatos.mostrarChoferes();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.choferes.get(i-1);
-    }
-
-
 }

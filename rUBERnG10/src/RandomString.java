@@ -11,7 +11,7 @@ public class RandomString {
         StringBuilder tmp = new StringBuilder();
         for (char ch = '0'; ch <= '9'; ++ch)
             tmp.append(ch);
-        for (char ch = 'a'; ch <= 'z'; ++ch)
+        for (char ch = 'A'; ch <= 'z'; ++ch)
             tmp.append(ch);
         symbols = tmp.toString().toCharArray();
     }

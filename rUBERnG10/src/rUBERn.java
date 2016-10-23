@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 public class rUBERn {
 
     public static void main(String args[]) {
@@ -13,6 +15,17 @@ public class rUBERn {
 
 
             int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+
+            try{
+                switch (i){
+                    case 1: case 2: case 3: case 4: break;//sth
+                    default:
+                        throw new OpcionIngresadaNoValida();
+                }
+            }
+            catch (OpcionIngresadaNoValida o){
+                i = Scanner.getInt("Ingrese una opcion valida por favor: \t");
+            }
 
             switch (i) {
                 case 1:
