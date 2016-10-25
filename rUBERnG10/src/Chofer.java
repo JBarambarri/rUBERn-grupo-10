@@ -1,19 +1,21 @@
 import java.util.ArrayList;
 
-public class Chofer implements Persona{
+public class Chofer {
 
     String nombre;
     Auto auto;
     Coordenada coordenada;
     boolean estado;
+    double saldo;
+
 
 
     public Chofer(String unNombre, long unaUbicacionX, long unaUbicacionY, Auto unAuto, Boolean unEstado){
-        System.out.print("\n***************Chofer***************\n");
         nombre = unNombre;
         auto = unAuto;
         coordenada = new Coordenada(unaUbicacionX, unaUbicacionY);
         estado = unEstado;
+        saldo = 0;
         BaseDeDatos.choferes.add(this);
     }
 
@@ -23,6 +25,11 @@ public class Chofer implements Persona{
 
     public Coordenada getCoordenada() {
         return coordenada;
+    }
+
+
+    public double getSaldo() {
+        return saldo;
     }
 
 
@@ -47,5 +54,9 @@ public class Chofer implements Persona{
 
     public String recibirPropuesta(){
         return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje:\t");
+    }
+
+    public void terminarViaje(){
+        setEstado(false);
     }
 }

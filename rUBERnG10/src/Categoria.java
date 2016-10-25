@@ -17,4 +17,11 @@ public class Categoria {
     public int getPorcentajeDeCostoAdicional() {
         return porcentajeDeCostoAdicional;
     }
+
+
+    public int compare(Categoria c1, Categoria c2) {
+        if(c1.getPorcentajeDeCostoAdicional() > c2.getPorcentajeDeCostoAdicional()) return -1;
+        if(c1.getPorcentajeDeCostoAdicional() < c2.getPorcentajeDeCostoAdicional()) return 1;
+        return 0;
+    }
 }

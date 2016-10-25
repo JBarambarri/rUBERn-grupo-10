@@ -1,14 +1,24 @@
+import org.joda.time.DateTime;
 
 public class Viaje {
 
     Jornada jornada;
     int cantidadDePasajeros;
+    DateTime dateAndTime;
+    Cliente cliente;
+    String codigoViaje;
 
 
-    public Viaje(Jornada unaJornada, int unaCantidadDePasajeros){
+
+    public Viaje(Jornada unaJornada, int unaCantidadDePasajeros, Cliente unCliente, String unCodigoViaje){
         jornada = unaJornada;
         cantidadDePasajeros = unaCantidadDePasajeros;
-        new GestionLogistica(this);
+        this.dateAndTime = DateTime.now();
+        cliente = unCliente;
+        codigoViaje = unCodigoViaje;
+
+        new GestionLogistica(this, unCliente);
+
     }
 
     public String datosDelViaje(){
@@ -24,5 +34,18 @@ public class Viaje {
     public int getCantidadDePasajeros() {
         return cantidadDePasajeros;
     }
+
+    public DateTime getDateAndTime() {
+        return dateAndTime;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public String getCodigoViaje() {
+        return codigoViaje;
+    }
+
 
 }

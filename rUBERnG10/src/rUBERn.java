@@ -1,7 +1,6 @@
+import java.util.Collections;
+
 public class rUBERn {
-
-    int distanciaMinima = 10;
-
 
     public static void main(String args[]) {
 
@@ -9,34 +8,36 @@ public class rUBERn {
 
         while (b) {
 
-            System.out.println();
-            System.out.println("1. Añadir Cliente ");
-            System.out.println("2. Añadir Chofer");
-            System.out.println("3. Añadir Auto ");
-            System.out.println("4. Añadir Categoria");
-            System.out.println("5. Pedir Viaje");
-            System.out.println("6. Salir");
+            System.out.println("1. Cliente ");
+            System.out.println("2. Chofer ");
+            System.out.println("3. Rubern ");
+            System.out.println("4. Salir");
 
 
-            int i = Scanner.getInt("\nIngrese el numero correspondiente a la opcion que desee  ");
+            int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+
+            try{
+                switch (i){
+                    case 1: case 2: case 3: case 4: break;//sth
+                    default:
+                        throw new OpcionIngresadaNoValida();
+                }
+            }
+            catch (OpcionIngresadaNoValida o){
+                i = Scanner.getInt("Ingrese una opcion valida por favor: \t");
+            }
 
             switch (i) {
                 case 1:
-                    generarCliente();
+                    new OpcionesCliente();
                     break;
                 case 2:
-                    generarChofer();
+                    new OpcionesChofer();
                     break;
                 case 3:
-                    generarAuto();
+                    new OpcionesRubern();
                     break;
                 case 4:
-                    generarCategoria();
-                    break;
-                case 5:
-                    pedirViaje(generarCliente()); //TEMPORAL. NO: crear un nuevo cliente cada vez que pedis viaje.
-                    break;
-                case 6:
                     b = false;
                     break;
 
@@ -48,24 +49,18 @@ public class rUBERn {
     }
 
 
-    private static Cliente generarCliente(){
-        return new Cliente(Scanner.getLong("Ubicacion X del cliente: \t"),
-        Scanner.getLong("Ubicacion Y del cliente: \t"),
-        Scanner.getString("Ingrese el nombre del cliente: \t") );
-    }
-
     private static Chofer generarChofer(){
-        return new Chofer(Scanner.getString("Ingrese el nombre del chofer: \t"),
-        Scanner.getLong("Ubicacion X del chofer: \t"),
-        Scanner.getLong("Ubicacion Y del chofer: \t"),
+        return new Chofer(Scanner.getString("Ingrese el nombre del chofer:\t"),
+        Scanner.getLong("Ubicacion X del chofer:\t"),
+        Scanner.getLong("Ubicacion Y del chofer:\t"),
         generarAuto(),
-        Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está: \t")));
+        Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está:\t")));
     }
 
     private static Auto generarAuto() {
         System.out.println("\n\033[4mDatos del auto:\033[0m");
-        return new Auto(Scanner.getString("Ingrese la marca del auto \t"),
-        Scanner.getInt("Ingrese la capcidad maxima del auto: \t"),
+        return new Auto(Scanner.getString("Ingrese la marca del auto:\t"),
+        Scanner.getInt("Ingrese la capcidad maxima del auto:\t"),
         generarCategoria());
     }
 
@@ -74,10 +69,4 @@ public class rUBERn {
         Scanner.getInt("Ingrese el porcentaje de costo adicional:\t"));
     }
 
-    private static Viaje pedirViaje(Cliente unCliente){
-        return unCliente.pedirViaje(
-        Scanner.getLong("Ingrese el destino en X: \t"),
-        Scanner.getLong("Ingrese el destino en Y: \t"),
-        Scanner.getInt("Ingrese la cantidad de pasajeros: \t"));
-    }
 }
