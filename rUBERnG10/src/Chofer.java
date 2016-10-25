@@ -10,7 +10,7 @@ public class Chofer {
 
 
 
-    public Chofer(String unNombre, long unaUbicacionX, long unaUbicacionY, Auto unAuto, Boolean unEstado){
+    public Chofer(String unNombre, long unaUbicacionX, long unaUbicacionY, Auto unAuto, boolean unEstado){
         nombre = unNombre;
         auto = unAuto;
         coordenada = new Coordenada(unaUbicacionX, unaUbicacionY);
@@ -56,7 +56,4 @@ public class Chofer {
         return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje:\t");
     }
 
-    public void terminarViaje(){
-        setEstado(false);
-    }
 }

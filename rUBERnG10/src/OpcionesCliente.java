@@ -24,9 +24,10 @@ public class OpcionesCliente extends Formulario{
                 case 2:
                     if(BaseDeDatos.clientes.size()==0) {
                         System.out.println("No hay clientes disponibles. Se va a proceder a crear uno");
-                        generarCliente();
+                        pedirViaje(generarCliente());
+                    }else {
+                        pedirViaje(elegirCliente());
                     }
-                    pedirViaje(elegirCliente());
                     break;
                 case 3:
                     b = false;
