@@ -17,11 +17,27 @@ public class OpcionesRubern extends Formulario{
                 System.out.println("Ingrese una opcion valida por favor");
                 new OpcionesRubern();
             }
+
+
             switch (i){
                 case 1:
+                    try{
+                        BaseDeDatos.viajesRealizados.get(0);
+                    }catch (IndexOutOfBoundsException e){
+                        System.out.print("No hay viajes realizados\n");
+                        b = false;
+                        break;
+                    }
                     new Historial(elegirCliente());
                     break;
                 case 2:
+                    try{
+                        BaseDeDatos.viajesRealizados.get(0);
+                    }catch (IndexOutOfBoundsException e){
+                        System.out.print("No hay viajes realizados\n");
+                        b = false;
+                        break;
+                    }
                     new Historial(elegirChofer());
                     break;
                 case 3:
