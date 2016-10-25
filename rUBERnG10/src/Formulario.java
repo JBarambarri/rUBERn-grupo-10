@@ -56,40 +56,15 @@ public abstract class Formulario {
             i = BaseDeDatos.clientes.size();
         }
         return BaseDeDatos.clientes.get(i-1);
-
-
     }
 
-
-    Chofer generarChofer(){
-        return new Chofer(
-                Scanner.getString("Nombre del chofer:\t"),
-                Scanner.getLong("Ubicacion X del chofer:\t"),
-                Scanner.getLong("Ubicacion Y del chofer:\t"),
-                elegirAuto(),
-                Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está:\t")));
-    }
-
-    Auto generarAuto() {
-        System.out.println("\n\033[4mDatos del auto:\033[0m");
-        return new Auto(
-                Scanner.getString("Marca del auto:\t"),
-                Scanner.getInt("Capcidad maxima del auto:\t"),
-                elegirCategoria());
-    }
-
-    Categoria generarCategoria(){
-        return new Categoria(
-                Scanner.getString("Nombre de la categoria del auto:\t"),
-                Scanner.getInt("Porcentaje de costo adicional:\t"));
-    }
 
     Cliente generarCliente(){
         return new Cliente(Scanner.getLong("Ubicacion X del cliente: \t"),
                 Scanner.getLong("Ubicacion Y del cliente: \t"),
                 Scanner.getString("Nombre del cliente: \t") ,
                 new Tarjeta(Scanner.getString("\n\033[4mDatos de la tarjeta:\033[0m\nNombre del banco: \t"),
-                Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
+                        Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
     }
 
 }

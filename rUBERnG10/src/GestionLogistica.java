@@ -71,6 +71,7 @@ public class GestionLogistica {
 
     private void choferAcepta(int i) {
         choferesTemporal.get(i).coordenada = jornada.coordenadaFinal;
+        choferesTemporal.get(i).setEstado(false);
 
         new GestionEconomica(choferesTemporal.get(i), viaje, cliente);
 
