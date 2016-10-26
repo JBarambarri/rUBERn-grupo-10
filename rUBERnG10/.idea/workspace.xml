@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78e30c81-768b-4f39-b2a1-96d82438edb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/rUBERnG10/Formulario.class" afterPath="$PROJECT_DIR$/out/production/rUBERnG10/Formulario.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/rUBERnG10/OpcionesChofer.class" afterPath="$PROJECT_DIR$/out/production/rUBERnG10/OpcionesChofer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/rUBERnG10/OpcionesCliente.class" afterPath="$PROJECT_DIR$/out/production/rUBERnG10/OpcionesCliente.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/rUBERnG10/OpcionesRubern.class" afterPath="$PROJECT_DIR$/out/production/rUBERnG10/OpcionesRubern.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/rUBERnG10/rUBERn.class" afterPath="$PROJECT_DIR$/out/production/rUBERnG10/rUBERn.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OpcionesChofer.java" afterPath="$PROJECT_DIR$/src/OpcionesChofer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Formulario.java" afterPath="$PROJECT_DIR$/src/Formulario.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OpcionesCliente.java" afterPath="$PROJECT_DIR$/src/OpcionesCliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OpcionesRubern.java" afterPath="$PROJECT_DIR$/src/OpcionesRubern.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rUBERn.java" afterPath="$PROJECT_DIR$/src/rUBERn.java" />
     </list>
     <ignored path="rUBERnG10.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,11 +25,11 @@
     <favorites_list name="rUBERnG10" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="rUBERn.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="rUBERn.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rUBERn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-480">
+            <state relative-caret-position="210">
               <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
               <folding />
             </state>
@@ -46,28 +39,18 @@
       <file leaf-file-name="OpcionesCliente.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OpcionesCliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="249">
+              <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpcionesRubern.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OpcionesRubern.java">
+      <file leaf-file-name="Formulario.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Formulario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpcionesChofer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OpcionesChofer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+            <state relative-caret-position="263">
+              <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -126,14 +109,14 @@
         <option value="$PROJECT_DIR$/src/HasMain.java" />
         <option value="$PROJECT_DIR$/src/MainSimulator.java" />
         <option value="$PROJECT_DIR$/src/Categoria.java" />
-        <option value="$PROJECT_DIR$/src/Formulario.java" />
         <option value="$PROJECT_DIR$/src/Chofer.java" />
         <option value="$PROJECT_DIR$/src/ChoferNoEstaHaciendoViajeExc.java" />
         <option value="$PROJECT_DIR$/src/GestionLogistica.java" />
-        <option value="$PROJECT_DIR$/src/OpcionesChofer.java" />
         <option value="$PROJECT_DIR$/src/OpcionesRubern.java" />
         <option value="$PROJECT_DIR$/src/rUBERn.java" />
         <option value="$PROJECT_DIR$/src/OpcionesCliente.java" />
+        <option value="$PROJECT_DIR$/src/OpcionesChofer.java" />
+        <option value="$PROJECT_DIR$/src/Formulario.java" />
       </list>
     </option>
   </component>
@@ -174,6 +157,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,9 +208,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -635,7 +618,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="720" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -645,7 +628,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.115625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39324117" sideWeight="0.884375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29800308" sideWeight="0.884375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -740,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,8 +796,8 @@
         <state relative-caret-position="210">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="false" />
+            <element signature="e#380#381#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="36" column="98" selection-start-line="36" selection-start-column="98" selection-end-line="36" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +947,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OpcionesRubern.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="369">
           <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
           <folding />
         </state>
@@ -977,32 +955,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OpcionesChofer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Formulario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OpcionesCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state relative-caret-position="705">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rUBERn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480">
+        <state relative-caret-position="210">
           <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OpcionesCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="61" column="66" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Formulario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
           <folding />
         </state>
       </provider>

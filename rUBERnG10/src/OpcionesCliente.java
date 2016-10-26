@@ -53,13 +53,13 @@ public class OpcionesCliente extends Formulario{
     @Override
     void mostrarContenido() {
         System.out.format("+-----------------+---------------+%n");
-        System.out.format("| Opciones        | N de Opcion   |%n");
+        System.out.format("|     Opciones    |  N de Opcion  |%n");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Añadir Cliente  |     1         |");
+        System.out.println("| Añadir Cliente  |       1       |");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Pedir Viaje     |     2         |");
+        System.out.println("| Pedir Viaje     |       2       |");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Salir           |     3         |");
+        System.out.println("| Salir           |       3       |");
         System.out.format("+-----------------+---------------+%n");
     }
 }
