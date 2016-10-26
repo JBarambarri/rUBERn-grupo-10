@@ -60,9 +60,9 @@ public abstract class Formulario {
 
 
     Cliente generarCliente(){
-        return new Cliente(Scanner.getLong("Ubicacion X del cliente: \t"),
+        return new Cliente(Scanner.getLong("\n"+"Ubicacion X del cliente: \t"),
                 Scanner.getLong("Ubicacion Y del cliente: \t"),
-                Scanner.getString("Nombre del cliente: \t") ,
+                Scanner.getString("\n"+"Nombre del cliente: \t") ,
                 new Tarjeta(Scanner.getString("\n\033[4mDatos de la tarjeta:\033[0m\nNombre del banco: \t"),
                         Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
     }

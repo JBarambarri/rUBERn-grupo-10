@@ -4,14 +4,25 @@ public class rUBERn {
 
     public static void main(String args[]) {
 
+        System.out.println("\n**********\033[1mBienvenido Al Sistema de rUBERn\033[0m**********");
+
         boolean b = true;
 
         while (b) {
+            String leftAlignFormat = "| %-15s | %-4d |%n";
 
-            System.out.println("1. Cliente ");
-            System.out.println("2. Chofer ");
-            System.out.println("3. Rubern ");
-            System.out.println("4. Salir");
+            System.out.format("+-----------------+---------------+%n");
+            System.out.format("| Opciones        | n de opcion   |%n");
+            System.out.format("+-----------------+---------------+%n");
+            System.out.println("| Cliente         |     1         |");
+            System.out.format("+-----------------+---------------+%n");
+            System.out.println("| Chofer          |     2         |");
+            System.out.format("+-----------------+---------------+%n");
+            System.out.println("| Rubern          |     3         |");
+            System.out.format("+-----------------+---------------+%n");
+            System.out.println("| Salir           |     4         |");
+            System.out.format("+-----------------+---------------+%n");
+
 
 
             int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");

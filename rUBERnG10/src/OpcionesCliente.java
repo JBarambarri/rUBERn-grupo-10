@@ -26,7 +26,11 @@ public class OpcionesCliente extends Formulario{
                         System.out.println("No hay clientes disponibles. Se va a proceder a crear uno");
                         pedirViaje(generarCliente());
                     }else {
-                        pedirViaje(elegirCliente());
+                        try{
+                            pedirViaje(elegirCliente());
+                        }catch (IndexOutOfBoundsException o){
+                           new OpcionesCliente().pedirViaje(generarCliente());
+                        }
                     }
                     break;
                 case 3:
@@ -41,7 +45,7 @@ public class OpcionesCliente extends Formulario{
         return unCliente.pedirViaje(
                 Scanner.getLong("Destino en X: \t"),
                 Scanner.getLong("Destino en Y: \t"),
-                Scanner.getInt("Cantidad de pasajeros: \t"));
+                Scanner.getInt("\n"+"Cantidad de pasajeros: \t"));
     }
 
     @Override
@@ -51,9 +55,15 @@ public class OpcionesCliente extends Formulario{
 
     @Override
     void mostrarContenido() {
-        System.out.println("1. Añadir Cliente ");
-        System.out.println("2. Pedir Viaje");
-        System.out.println("3. Salir");
+        System.out.format("+-----------------+---------------+%n");
+        System.out.format("| Opciones        | N de Opcion   |%n");
+        System.out.format("+-----------------+---------------+%n");
+        System.out.println("| Añadir Cliente  |     1         |");
+        System.out.format("+-----------------+---------------+%n");
+        System.out.println("| Pedir Viaje     |     2         |");
+        System.out.format("+-----------------+---------------+%n");
+        System.out.println("| Salir           |     3         |");
+        System.out.format("+-----------------+---------------+%n");
     }
 }
 
