@@ -12,15 +12,15 @@ public class rUBERn {
             String leftAlignFormat = "| %-15s | %-4d |%n";
 
             System.out.format("+-----------------+---------------+%n");
-            System.out.format("| Opciones        | n de opcion   |%n");
+            System.out.format("|     Opciones    |  N de opcion  |%n");
             System.out.format("+-----------------+---------------+%n");
-            System.out.println("| Cliente         |     1         |");
+            System.out.println("| Cliente         |       1       |");
             System.out.format("+-----------------+---------------+%n");
-            System.out.println("| Chofer          |     2         |");
+            System.out.println("| Chofer          |       2       |");
             System.out.format("+-----------------+---------------+%n");
-            System.out.println("| Rubern          |     3         |");
+            System.out.println("| Rubern          |       3       |");
             System.out.format("+-----------------+---------------+%n");
-            System.out.println("| Salir           |     4         |");
+            System.out.println("| Salir           |       4       |");
             System.out.format("+-----------------+---------------+%n");
 
 

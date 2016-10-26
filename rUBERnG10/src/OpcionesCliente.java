@@ -25,12 +25,9 @@ public class OpcionesCliente extends Formulario{
                     if(BaseDeDatos.clientes.size()==0) {
                         System.out.println("No hay clientes disponibles. Se va a proceder a crear uno");
                         pedirViaje(generarCliente());
-                    }else {
-                        try{
-                            pedirViaje(elegirCliente());
-                        }catch (IndexOutOfBoundsException o){
-                           new OpcionesCliente().pedirViaje(generarCliente());
-                        }
+                    }else{
+                        pedirViaje(elegirCliente());
+
                     }
                     break;
                 case 3:
@@ -41,7 +38,7 @@ public class OpcionesCliente extends Formulario{
     }
 
 
-    private static Viaje pedirViaje(Cliente unCliente){
+    private Viaje pedirViaje(Cliente unCliente){
         return unCliente.pedirViaje(
                 Scanner.getLong("Destino en X: \t"),
                 Scanner.getLong("Destino en Y: \t"),

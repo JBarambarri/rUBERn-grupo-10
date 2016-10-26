@@ -45,13 +45,13 @@ public class OpcionesChofer extends Formulario{
     @Override
     void mostrarContenido() {
         System.out.format("+-----------------+---------------+%n");
-        System.out.format("| Opciones        | N de Opcion   |%n");
+        System.out.format("|    Opciones     |  N de Opcion  |%n");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Añadir Chofer   |     1         |");
+        System.out.println("| Añadir Chofer   |      1        |");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Terminar Viaje  |     2         |");
+        System.out.println("| Terminar Viaje  |      2        |");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Salir           |     3         |");
+        System.out.println("| Salir           |      3        |");
         System.out.format("+-----------------+---------------+%n");
     }
 
