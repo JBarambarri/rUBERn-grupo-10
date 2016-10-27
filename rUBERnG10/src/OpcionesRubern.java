@@ -60,11 +60,20 @@ public class OpcionesRubern extends Formulario{
 
     @Override
     void mostrarContenido() {
-        System.out.println("1. Mostrar historial por cliente");
-        System.out.println("2. Mostrar historial por chofer");
-        System.out.println("3. Generar auto");
-        System.out.println("4. Generar categoria");
-        System.out.println("5. Salir");
+        System.out.format("+----------------------------------+---------------+%n");
+        System.out.format("|             Opciones             |  N de Opcion  |%n");
+        System.out.format("+----------------------------------+---------------+%n");
+        System.out.println("| Mostrar historial por cliente    |       1       |");
+        System.out.format("+----------------------------------+---------------+%n");
+        System.out.println("| Mostrar historial por chofer     |       2       |");
+        System.out.format("+----------------------------------+---------------+%n");
+        System.out.println("| Generar auto                     |       3       |");
+        System.out.format("+----------------------------------+---------------+%n");
+        System.out.println("| Generar categoria                |       4       |");
+        System.out.format("+----------------------------------+---------------+%n");
+        System.out.println("| Salir                            |       5       |");
+        System.out.format("+----------------------------------+---------------+%n");
+
     }
 
 

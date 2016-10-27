@@ -2,6 +2,7 @@
 public abstract class Formulario {
 
     public void show() {
+
         blanquearPantalla();
         mostrarTitulo();
         System.out.println();
@@ -47,24 +48,25 @@ public abstract class Formulario {
     Cliente elegirCliente(){
         mostrarClientes();
         int i = Scanner.getInt("Ingrese la opcion correspondiente.\t");
-        try{
-            BaseDeDatos.clientes.get(i-1);
+
+        while(true){
+            try{
+                BaseDeDatos.clientes.get(i-1);
+                return BaseDeDatos.clientes.get(i-1);
+            }
+            catch (IndexOutOfBoundsException e){
+                i = Scanner.getInt("Ingrese una opcion valida:\t");
+            }
         }
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Ingrese sus datos:");
-            generarCliente();
-            i = BaseDeDatos.clientes.size();
-        }
-        return BaseDeDatos.clientes.get(i-1);
     }
 
 
     Cliente generarCliente(){
-        return new Cliente(Scanner.getLong("Ubicacion X del cliente: \t"),
+        return new Cliente(Scanner.getLong("\n"+"Ubicacion X del cliente: \t"),
                 Scanner.getLong("Ubicacion Y del cliente: \t"),
-                Scanner.getString("Nombre del cliente: \t") ,
+                Scanner.getString("\n"+"Nombre del cliente: \t") ,
                 new Tarjeta(Scanner.getString("\n\033[4mDatos de la tarjeta:\033[0m\nNombre del banco: \t"),
-                        Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
+                Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
     }
 
 }
