@@ -2,6 +2,7 @@
 public abstract class Formulario {
 
     public void show() {
+
         blanquearPantalla();
         mostrarTitulo();
         System.out.println();
