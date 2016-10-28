@@ -9,7 +9,7 @@ public class rUBERn {
         boolean b = true;
 
         while (b) {
-            String leftAlignFormat = "| %-15s | %-4d |%n";
+
 
             System.out.format("+-----------------+---------------+%n");
             System.out.format("|     Opciones    |  N de opcion  |%n");
@@ -55,6 +55,7 @@ public class rUBERn {
                     new OpcionesRubern();
                     break;
                 case 4:
+                    System.out.println("\n**********\033[1mGracias por usar rUBERn\033[0m**********");
                     b = false;
                     break;
 

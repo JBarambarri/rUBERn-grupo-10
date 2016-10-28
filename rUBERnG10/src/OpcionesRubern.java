@@ -83,7 +83,7 @@ public class OpcionesRubern extends Formulario{
             BaseDeDatos.categorias.get(0);
         }
         catch(IndexOutOfBoundsException e){
-            System.out.println("No hay categorias disponibles. A continuacion cree una:");
+            System.out.println("\nNo hay categorias disponibles. A continuacion cree una:\n");
             generarCategoria();
         }
 

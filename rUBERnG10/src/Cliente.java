@@ -5,7 +5,7 @@ public class Cliente {
     Tarjeta tarjeta;
 
 
-    public Cliente(long unaUbicacionX, long unaUbicacionY, String unNombre, Tarjeta unaTarjeta) {
+    public Cliente(String unNombre, long unaUbicacionX, long unaUbicacionY, Tarjeta unaTarjeta) {
         nombre = unNombre;
         ubicacion = new Coordenada(unaUbicacionX, unaUbicacionY);
         tarjeta = unaTarjeta;

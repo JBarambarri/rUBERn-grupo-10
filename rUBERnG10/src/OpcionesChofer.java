@@ -24,7 +24,12 @@ public class OpcionesChofer extends Formulario{
                     break;
                 case 2:
                     if(BaseDeDatos.viajesRealizados.size()==0) {
-                        System.out.print("No hay viajes para terminar");
+                        System.out.print("\nNo hay viajes para terminar");
+                        try {
+                            Thread.sleep(4000);
+                        } catch(InterruptedException ex) {
+                            Thread.currentThread().interrupt();
+                        }
                     }else{
                         terminarViaje(elegirChofer());
                     }
@@ -47,11 +52,11 @@ public class OpcionesChofer extends Formulario{
         System.out.format("+-----------------+---------------+%n");
         System.out.format("|    Opciones     |  N de Opcion  |%n");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Añadir Chofer   |      1        |");
+        System.out.println("| Añadir Chofer   |       1       |");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Terminar Viaje  |      2        |");
+        System.out.println("| Terminar Viaje  |       2       |");
         System.out.format("+-----------------+---------------+%n");
-        System.out.println("| Salir           |      3        |");
+        System.out.println("| Salir           |       3       |");
         System.out.format("+-----------------+---------------+%n");
     }
 
@@ -70,8 +75,8 @@ public class OpcionesChofer extends Formulario{
 
         }
         return new Chofer(
-                Scanner.getString("Nombre del chofer:\t"),
-                Scanner.getLong("Ubicacion X del chofer:\t"),
+                Scanner.getString("\nNombre del chofer:\t"),
+                Scanner.getLong("\nUbicacion X del chofer:\t"),
                 Scanner.getLong("Ubicacion Y del chofer:\t"),
                 elegirAuto(),
                 Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está:\t")));
@@ -85,6 +90,7 @@ public class OpcionesChofer extends Formulario{
             }
         }
         catch (ChoferNoEstaHaciendoViajeExc e){
+
     }
         unChofer.setEstado(true);
     }

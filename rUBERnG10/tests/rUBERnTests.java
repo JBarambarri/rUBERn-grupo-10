@@ -20,8 +20,10 @@ public class rUBERnTests {
     public void test002() {         // clase no programada por nosotros
         RandomString s = new RandomString(5);
         System.out.print(s.nextString());
-
     }
+
+
+
 
 
 }
