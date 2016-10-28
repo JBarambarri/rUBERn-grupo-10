@@ -18,11 +18,7 @@ public class Historial {
 
 
     private static void historialCliente(int i, Cliente unCliente) {
-        try {
-            Thread.sleep(10000);
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+        new HacerTiempo(10);
         Viaje viaje = BaseDeDatos.viajesRealizados.get(i).getViaje();
         System.out.println(
             "\nCodigo unico del viaje: " + viaje.getCodigoViaje() + "\n" + "Pago" + "\n" +
@@ -52,11 +48,7 @@ public class Historial {
 
 
     private static void historialChofer(int i, Chofer unChofer) {
-        try {
-            Thread.sleep(10000);
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+        new HacerTiempo(10);
         Viaje viaje = BaseDeDatos.viajesRealizados.get(i).getViaje();
         System.out.println(
                 "Codigo unico del viaje: " + viaje.getCodigoViaje() + "\n" + "Cobro" + "\n" +

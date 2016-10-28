@@ -4,7 +4,7 @@ public class rUBERn {
 
     public static void main(String args[]) {
 
-        System.out.println("\n**********\033[1mBienvenido Al Sistema de rUBERn\033[0m**********");
+        System.out.println("\n**********\033[1m\033[4mBienvenido a rUBERn\033[0m**********\n");
 
         boolean b = true;
 
@@ -80,7 +80,7 @@ public class rUBERn {
     }
 
     private static Categoria generarCategoria(){
-        return new Categoria(Scanner.getString("Ingrese el nombre de la categoria del auto:\t"),
+        return new Categoria(Scanner.getString("\nIngrese el nombre de la categoria del auto:\t"),
         Scanner.getInt("Ingrese el porcentaje de costo adicional:\t"));
     }
 

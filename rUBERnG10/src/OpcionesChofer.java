@@ -25,11 +25,7 @@ public class OpcionesChofer extends Formulario{
                 case 2:
                     if(BaseDeDatos.viajesRealizados.size()==0) {
                         System.out.print("\nNo hay viajes para terminar");
-                        try {
-                            Thread.sleep(4000);
-                        } catch(InterruptedException ex) {
-                            Thread.currentThread().interrupt();
-                        }
+                        new HacerTiempo(4);
                     }else{
                         terminarViaje(elegirChofer());
                     }
@@ -66,11 +62,7 @@ public class OpcionesChofer extends Formulario{
         }
         catch(IndexOutOfBoundsException e){
             System.out.println("\nRubern no tiene autos disponibles por el momento. Espere a que se cree uno...");
-            try {
-                Thread.sleep(4000);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
+            new HacerTiempo(4);
             new OpcionesRubern();
 
         }

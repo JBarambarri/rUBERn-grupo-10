@@ -40,11 +40,7 @@ public class GestionLogistica {
         }
         if(choferesTemporal.size()==0) {
             System.out.println("\n\033[031mNo hay choferes disponibles\033[030m");
-            try {
-                Thread.sleep(4000);
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
+            new HacerTiempo(4);
         }
         for(int i=0; i<choferesTemporal.size(); i++){
             if (choferCumpleCondiciones(i)) {

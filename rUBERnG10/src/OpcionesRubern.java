@@ -24,8 +24,8 @@ public class OpcionesRubern extends Formulario{
                     try{
                         BaseDeDatos.viajesRealizados.get(0);
                     }catch (IndexOutOfBoundsException e){
-                        System.out.print("No hay viajes realizados\n");
-                        b = false;
+                        System.out.print("\nNo hay viajes realizados\n");
+                        new HacerTiempo(3);
                         break;
                     }
                     new Historial(elegirCliente());
@@ -34,8 +34,8 @@ public class OpcionesRubern extends Formulario{
                     try{
                         BaseDeDatos.viajesRealizados.get(0);
                     }catch (IndexOutOfBoundsException e){
-                        System.out.print("No hay viajes realizados\n");
-                        b = false;
+                        System.out.print("\nNo hay viajes realizados\n");
+                        new HacerTiempo(3);
                         break;
                     }
                     new Historial(elegirChofer());
@@ -78,7 +78,7 @@ public class OpcionesRubern extends Formulario{
 
 
 
-    Auto generarAuto() {
+    private Auto generarAuto() {
         try{
             BaseDeDatos.categorias.get(0);
         }
@@ -94,9 +94,9 @@ public class OpcionesRubern extends Formulario{
                 elegirCategoria());
     }
 
-    Categoria generarCategoria(){
+    private Categoria generarCategoria(){
         return new Categoria(
-                Scanner.getString("Nombre de la categoria del auto:\t"),
+                Scanner.getString("\nNombre de la categoria del auto:\t"),
                 Scanner.getInt("Porcentaje de costo adicional:\t"));
     }
 }

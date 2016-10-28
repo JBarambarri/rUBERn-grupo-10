@@ -21,11 +21,6 @@ public abstract class Formulario {
     }
 
 
-    void mostrarClientes(){
-        for(int i=0; i<BaseDeDatos.clientes.size(); i++){
-            System.out.println("Cliente " + (i+1) + ": "+ BaseDeDatos.clientes.get(i).getNombre() + "\n");
-        }
-    }
 
     Chofer elegirChofer(){
         BaseDeDatos.mostrarChoferes();
@@ -46,7 +41,7 @@ public abstract class Formulario {
     }
 
     Cliente elegirCliente(){
-        mostrarClientes();
+        BaseDeDatos.mostrarClientes();
         int i = Scanner.getInt("Ingrese la opcion correspondiente.\t");
 
         while(true){
