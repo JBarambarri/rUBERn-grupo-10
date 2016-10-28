@@ -60,8 +60,14 @@ public class OpcionesChofer extends Formulario{
             BaseDeDatos.autos.get(0);
         }
         catch(IndexOutOfBoundsException e){
-            System.out.println("Rubern no tiene autos disponibles por el momento. Espere a que se cree uno");
+            System.out.println("\nRubern no tiene autos disponibles por el momento. Espere a que se cree uno...");
+            try {
+                Thread.sleep(4000);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
             new OpcionesRubern();
+
         }
         return new Chofer(
                 Scanner.getString("Nombre del chofer:\t"),

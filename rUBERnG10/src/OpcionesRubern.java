@@ -90,7 +90,7 @@ public class OpcionesRubern extends Formulario{
         System.out.println("\n\033[4mDatos del auto:\033[0m");
         return new Auto(
                 Scanner.getString("Marca del auto:\t"),
-                Scanner.getInt("Capcidad maxima del auto:\t"),
+                Scanner.getInt("Capacidad maxima del auto:\t"),
                 elegirCategoria());
     }
 

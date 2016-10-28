@@ -27,16 +27,22 @@ public class rUBERn {
 
             int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
 
-            try{
-                switch (i){
-                    case 1: case 2: case 3: case 4: break;//sth
-                    default:
-                        throw new OpcionIngresadaNoValida();
+
+            try {
+                switch (i) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        break;
+                    //default:
+                        //throw new OpcionIngresadaNoValida();
                 }
             }
-            catch (OpcionIngresadaNoValida o){
+            catch (OpcionIngresadaNoValida o) {
                 i = Scanner.getInt("Ingrese una opcion valida por favor: \t");
             }
+
 
             switch (i) {
                 case 1:
@@ -51,9 +57,6 @@ public class rUBERn {
                 case 4:
                     b = false;
                     break;
-
-                default:
-                    throw new OpcionIngresadaNoValida();
 
             }
         }
