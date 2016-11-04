@@ -1,14 +1,14 @@
-public class RealScanner {
+public class RealScanner implements Scanner{
 
     private static final java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-    private RealScanner() { }
+    public RealScanner() { }
 
     /** Displays the given message and waits for user to enter some text.
      * @param message to be displayed.
      * @return text entered by the user.
      */
-    public static String getString(String message) {
+    public String getString(String message) {
         System.out.print(message);
         final String result = scanner.nextLine().trim();
         if(result.isEmpty()) {
@@ -22,7 +22,7 @@ public class RealScanner {
      * @param message to be displayed.
      * @return char entered by the user.
      */
-    public static char getChar(String message) {
+    public char getChar(String message) {
         return getString(message).charAt(0);
     }
 
@@ -30,7 +30,7 @@ public class RealScanner {
      * @param message to be displayed.
      * @return integer entered by the user.
      */
-    public static int getInt(String message) {
+    public int getInt(String message) {
         System.out.print(message);
         try {
             return Integer.parseInt(scanner.nextLine());
@@ -44,7 +44,7 @@ public class RealScanner {
      * @param message to be displayed.
      * @return long entered by the user.
      */
-    public static long getLong(String message) {
+    public long getLong(String message) {
         System.out.print(message);
         try {
             return Long.parseLong(scanner.nextLine());
@@ -58,7 +58,7 @@ public class RealScanner {
      * @param message to be displayed.
      * @return float entered by the user.
      */
-    public static float getFloat(String message) {
+    public float getFloat(String message) {
         System.out.print(message);
         try {
             return Float.parseFloat(scanner.nextLine());
@@ -72,7 +72,7 @@ public class RealScanner {
      * @param message to be displayed.
      * @return double entered by the user.
      */
-    public static double getDouble(String message) {
+    public double getDouble(String message) {
         System.out.print(message);
         try {
             return Double.parseDouble(scanner.nextLine());
@@ -82,27 +82,7 @@ public class RealScanner {
         }
     }
 
-    /** Test */
 
-    public static void main(String[] args) {
-        final String text = RealScanner.getString("Enter some text: ");
-        System.out.println("The entered text was: " + text);
-
-        final char c = RealScanner.getChar("Enter a char: ");
-        System.out.println("The entered char is: " + c);
-
-        final int i = RealScanner.getInt("Enter an int: ");
-        System.out.println("The entered int is: " + i);
-
-        final long l = RealScanner.getLong("Enter a long: ");
-        System.out.println("The entered long is: " + l);
-
-        final float f = RealScanner.getFloat("Enter a float: ");
-        System.out.println("The entered float is: " + f);
-
-        final double d = RealScanner.getDouble("Enter a double: ");
-        System.out.println("The entered double is: " + d);
-    }
 }
 
 //dado por la catedra de programacion I.
