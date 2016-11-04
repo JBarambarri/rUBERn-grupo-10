@@ -1,11 +1,17 @@
 
 public class OpcionesChofer extends Formulario{
 
-    public OpcionesChofer(){
+    Scanner scanner;
+
+
+    public OpcionesChofer(Scanner unScanner){
+        scanner = unScanner;
+
+
         boolean b = true;
         while(b) {
             show();
-            int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+            int i = unScanner.getInt("\nIngrese la opcion correspondiente:\t");
             try{
                 switch (i){
                     case 1: case 2: case 3: break;//sth
@@ -15,7 +21,7 @@ public class OpcionesChofer extends Formulario{
             }
             catch (OpcionIngresadaNoValida o){
                 System.out.println("Ingrese una opcion valida por favor");
-                new OpcionesChofer();
+                new OpcionesChofer(scanner);
             }
 
             switch (i) {
@@ -27,7 +33,7 @@ public class OpcionesChofer extends Formulario{
                         System.out.print("\nNo hay viajes para terminar");
                         new HacerTiempo(4);
                     }else{
-                        terminarViaje(elegirChofer());
+                        terminarViaje(elegirChofer(scanner));
                     }
                     break;
                 case 3:
@@ -63,15 +69,15 @@ public class OpcionesChofer extends Formulario{
         catch(IndexOutOfBoundsException e){
             System.out.println("\nRubern no tiene autos disponibles por el momento. Espere a que se cree uno...");
             new HacerTiempo(4);
-            new OpcionesRubern();
+            new OpcionesRubern(scanner);
 
         }
         return new Chofer(
-                Scanner.getString("\nNombre del chofer:\t"),
-                Scanner.getLong("\nUbicacion X del chofer:\t"),
-                Scanner.getLong("Ubicacion Y del chofer:\t"),
-                elegirAuto(),
-                Interpreter.interpreter(Scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está:\t")));
+                scanner.getString("\nNombre del chofer:\t"),
+                scanner.getLong("\nUbicacion X del chofer:\t"),
+                scanner.getLong("Ubicacion Y del chofer:\t"),
+                elegirAuto(scanner),
+                Interpreter.interpreter(scanner.getString("Ingrese 'si' si está activo, o 'no' si no lo está:\t"), scanner));
     }
 
 
@@ -81,9 +87,8 @@ public class OpcionesChofer extends Formulario{
                 throw new ChoferNoEstaHaciendoViajeExc();
             }
         }
-        catch (ChoferNoEstaHaciendoViajeExc e){
+        catch (ChoferNoEstaHaciendoViajeExc e){}
 
-    }
         unChofer.setEstado(true);
     }
 

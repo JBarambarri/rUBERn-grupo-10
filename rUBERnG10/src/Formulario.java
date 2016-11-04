@@ -1,5 +1,7 @@
 
 public abstract class Formulario {
+    
+    
 
     public void show() {
 
@@ -22,27 +24,52 @@ public abstract class Formulario {
 
 
 
-    Chofer elegirChofer(){
+    Chofer elegirChofer(Scanner unScanner){
         BaseDeDatos.mostrarChoferes();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.choferes.get(i-1);
+        int i = unScanner.getInt("Ingrese la opcion correspondiente:\t");
+        while(true){
+            try{
+                BaseDeDatos.clientes.get(i-1);
+                return BaseDeDatos.choferes.get(i-1);
+            }
+            catch (IndexOutOfBoundsException e){
+                i = unScanner.getInt("Ingrese una opcion valida:\t");
+            }
+        }
     }
 
-     Auto elegirAuto(){
+     Auto elegirAuto(Scanner unScanner){
         BaseDeDatos.mostrarAutos();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.autos.get(i-1);
+        int i = unScanner.getInt("Ingrese la opcion correspondiente:\t");
+        while(true){
+             try{
+                 BaseDeDatos.clientes.get(i-1);
+                 return BaseDeDatos.autos.get(i-1);
+             }
+             catch (IndexOutOfBoundsException e){
+                 i = unScanner.getInt("Ingrese una opcion valida:\t");
+             }
+        }
     }
 
-    Categoria elegirCategoria(){
+    Categoria elegirCategoria(Scanner unScanner){
         BaseDeDatos.mostrarCategorias();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente:\t");
-        return BaseDeDatos.categorias.get(i-1);
+        int i = unScanner.getInt("Ingrese la opcion correspondiente:\t");
+
+        while(true){
+            try{
+                BaseDeDatos.clientes.get(i-1);
+                return BaseDeDatos.categorias.get(i-1);
+            }
+            catch (IndexOutOfBoundsException e){
+                i = unScanner.getInt("Ingrese una opcion valida:\t");
+            }
+        }
     }
 
-    Cliente elegirCliente(){
+    Cliente elegirCliente(Scanner unScanner){
         BaseDeDatos.mostrarClientes();
-        int i = Scanner.getInt("Ingrese la opcion correspondiente.\t");
+        int i = unScanner.getInt("Ingrese la opcion correspondiente.\t");
 
         while(true){
             try{
@@ -50,18 +77,18 @@ public abstract class Formulario {
                 return BaseDeDatos.clientes.get(i-1);
             }
             catch (IndexOutOfBoundsException e){
-                i = Scanner.getInt("Ingrese una opcion valida:\t");
+                i = unScanner.getInt("Ingrese una opcion valida:\t");
             }
         }
     }
 
 
-    Cliente generarCliente(){
-        return new Cliente(Scanner.getString("\n"+"Nombre del cliente: \t") ,
-                Scanner.getLong("\n"+"Ubicacion X del cliente: \t"),
-                Scanner.getLong("Ubicacion Y del cliente: \t"),
-                new Tarjeta(Scanner.getString("\n\033[4mDatos de la tarjeta:\033[0m\nNombre del banco: \t"),
-                Scanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
+    Cliente generarCliente(Scanner unScanner){
+        return new Cliente(unScanner.getString("\n"+"Nombre del cliente: \t") ,
+                unScanner.getLong("\n"+"Ubicacion X del cliente: \t"),
+                unScanner.getLong("Ubicacion Y del cliente: \t"),
+                new Tarjeta(unScanner.getString("\n\033[4mDatos de la tarjeta:\033[0m\nNombre del banco: \t"),
+                unScanner.getInt("Numero de la tarjeta: \t"), 1000)); //*
     }
 
 }

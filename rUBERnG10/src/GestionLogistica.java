@@ -10,6 +10,7 @@ public class GestionLogistica {
     int cantidadDePasajeros;
     Cliente cliente;
     String codigoViaje;
+    Scanner scanner;
 
     public int distanciaMinima = 100; //?
 
@@ -17,12 +18,14 @@ public class GestionLogistica {
     private ArrayList<Chofer> choferesTemporal = BaseDeDatos.choferes;
 
 
-    public GestionLogistica(Viaje unViaje, Cliente unCliente){
+    public GestionLogistica(Viaje unViaje, Cliente unCliente, Scanner unScanner){
         jornada = unViaje.getJornada();
         cantidadDePasajeros = unViaje.getCantidadDePasajeros();
         viaje = unViaje;
         cliente = unCliente;
         codigoViaje = viaje.getCodigoViaje();
+        scanner = unScanner;
+
 
         //BubbleSortChoferes bsc = new BubbleSortChoferes(jornada, BaseDeDatos.choferes);
         //choferesTemporal = bsc.getChoferesFiltrado();
@@ -39,8 +42,7 @@ public class GestionLogistica {
 
         }
         if(choferesTemporal.size()==0) {
-            System.out.println("\n\033[031mNo hay choferes disponibles\033[030m");
-            new HacerTiempo(4);
+            noHayChoferes();
         }
         for(int i=0; i<choferesTemporal.size(); i++){
             if (choferCumpleCondiciones(i)) {
@@ -50,8 +52,8 @@ public class GestionLogistica {
                 System.out.println("\n**********\033[1mCHOFER\033[0m**********");
                 System.out.print(viaje.datosDelViaje());
                 System.out.println("Chofer:  " + choferesTemporal.get(i).getNombre());
-                String s = choferesTemporal.get(i).recibirPropuesta();
-                if (Interpreter.interpreter(s)) {
+                String s = scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje:\t");
+                if (Interpreter.interpreter(s, scanner)) {
                     choferAcepta(i);
                     break;
                 }else{
@@ -83,6 +85,10 @@ public class GestionLogistica {
     private boolean choferCumpleCondiciones(int i){
         return choferesTemporal.get(i).estado && cantidadDePasajeros <= choferesTemporal.get(i).auto.capacidadMaxima &&
         Calculadora.dist2Coord(choferesTemporal.get(i).getCoordenada(), jornada.coordenadaInicial) < distanciaMinima;
+    }
+
+    private String noHayChoferes(){
+        return "\n\033[031mNo hay choferes disponibles\033[030m";
     }
 
 }

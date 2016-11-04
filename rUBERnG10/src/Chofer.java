@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Chofer {
 
     String nombre;
@@ -16,6 +14,7 @@ public class Chofer {
         coordenada = new Coordenada(unaUbicacionX, unaUbicacionY);
         estado = unEstado;
         saldo = 0;
+
         BaseDeDatos.choferes.add(this);
     }
 
@@ -31,8 +30,6 @@ public class Chofer {
     public double getSaldo() {
         return saldo;
     }
-
-
 
     public Auto getAuto() {
         return auto;
@@ -50,10 +47,7 @@ public class Chofer {
         this.coordenada = coordenada;
     }
 
-
-
-    public String recibirPropuesta(){
-        return Scanner.getString("Ingrese 'si' si acepta el viaje" + "\n" + "Ingrese 'no' si no acepta el viaje:\t");
+    public void agregarSaldo(double cantidad) {
+        saldo += cantidad;
     }
-
 }

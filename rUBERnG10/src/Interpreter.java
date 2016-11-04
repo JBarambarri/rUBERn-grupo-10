@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Interpreter {
 
-    public static boolean interpreter(String s){
+    public static boolean interpreter(String s, Scanner unScanner){
         try {
             boolean c;
             c = Objects.equals(s, "si") || Objects.equals(s, "no");
@@ -12,8 +12,8 @@ public class Interpreter {
         }
         catch (RuntimeException r){
             System.out.println();
-            s = Scanner.getString("Ingrese si o no por favor:\t");
-            interpreter(s);
+            s = unScanner.getString("Ingrese si o no por favor:\t");
+            interpreter(s, unScanner);
         }
 
         boolean b=false;

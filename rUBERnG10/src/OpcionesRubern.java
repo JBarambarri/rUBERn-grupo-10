@@ -1,11 +1,15 @@
 
 public class OpcionesRubern extends Formulario{
 
-    public OpcionesRubern(){
+    Scanner scanner;
+
+    public OpcionesRubern(Scanner unScanner){
+        scanner = unScanner;
+
         boolean b = true;
         while(b){
             show();
-            int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+            int i = scanner.getInt("\nIngrese la opcion correspondiente:\t");
             try{
                 switch (i){
                     case 1: case 2: case 3: case 4: case 5: break;//sth
@@ -15,7 +19,7 @@ public class OpcionesRubern extends Formulario{
             }
             catch (OpcionIngresadaNoValida o){
                 System.out.println("Ingrese una opcion valida por favor");
-                new OpcionesRubern();
+                new OpcionesRubern(scanner);
             }
 
 
@@ -28,7 +32,7 @@ public class OpcionesRubern extends Formulario{
                         new HacerTiempo(3);
                         break;
                     }
-                    new Historial(elegirCliente());
+                    new Historial(elegirCliente(scanner));
                     break;
                 case 2:
                     try{
@@ -38,7 +42,7 @@ public class OpcionesRubern extends Formulario{
                         new HacerTiempo(3);
                         break;
                     }
-                    new Historial(elegirChofer());
+                    new Historial(elegirChofer(scanner));
                     break;
                 case 3:
                     generarAuto();
@@ -89,14 +93,14 @@ public class OpcionesRubern extends Formulario{
 
         System.out.println("\n\033[4mDatos del auto:\033[0m");
         return new Auto(
-                Scanner.getString("Marca del auto:\t"),
-                Scanner.getInt("Capacidad maxima del auto:\t"),
-                elegirCategoria());
+                scanner.getString("Marca del auto:\t"),
+                scanner.getInt("Capacidad maxima del auto:\t"),
+                elegirCategoria(scanner));
     }
 
     private Categoria generarCategoria(){
         return new Categoria(
-                Scanner.getString("\nNombre de la categoria del auto:\t"),
-                Scanner.getInt("Porcentaje de costo adicional:\t"));
+                scanner.getString("\nNombre de la categoria del auto:\t"),
+                scanner.getInt("Porcentaje de costo adicional:\t"));
     }
 }

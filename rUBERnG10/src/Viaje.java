@@ -7,17 +7,19 @@ public class Viaje {
     DateTime dateAndTime;
     Cliente cliente;
     String codigoViaje;
+    Scanner scanner;
 
 
 
-    public Viaje(Jornada unaJornada, int unaCantidadDePasajeros, Cliente unCliente, String unCodigoViaje){
+    public Viaje(Jornada unaJornada, int unaCantidadDePasajeros, Cliente unCliente, String unCodigoViaje, Scanner unScanner){
         jornada = unaJornada;
         cantidadDePasajeros = unaCantidadDePasajeros;
         this.dateAndTime = DateTime.now();
         cliente = unCliente;
         codigoViaje = unCodigoViaje;
+        scanner = unScanner;
 
-        new GestionLogistica(this, unCliente);
+        new GestionLogistica(this, unCliente, scanner);
 
     }
 

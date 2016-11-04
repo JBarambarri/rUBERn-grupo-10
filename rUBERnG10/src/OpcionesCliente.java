@@ -1,11 +1,15 @@
 
 public class OpcionesCliente extends Formulario{
 
-    public OpcionesCliente(){
+    Scanner scanner;
+
+    public OpcionesCliente(Scanner unScanner){
+        scanner = unScanner;
+
         boolean b = true;
         while(b) {
             show();
-            int i = Scanner.getInt("\nIngrese la opcion correspondiente:\t");
+            int i = scanner.getInt("\nIngrese la opcion correspondiente:\t");
             try{
                 switch (i){
                     case 1: case 2: case 3: break;
@@ -15,18 +19,18 @@ public class OpcionesCliente extends Formulario{
             }
             catch (OpcionIngresadaNoValida o){
                 System.out.println("Ingrese una opcion valida por favor");
-                new OpcionesCliente();
+                new OpcionesCliente(scanner);
             }
             switch (i) {
                 case 1:
-                    generarCliente();
+                    generarCliente(scanner);
                     break;
                 case 2:
                     if(BaseDeDatos.clientes.size()==0) {
                         System.out.println("No hay clientes disponibles. Se va a proceder a crear uno");
-                        pedirViaje(generarCliente());
+                        pedirViaje(generarCliente(scanner));
                     }else{
-                        pedirViaje(elegirCliente());
+                        pedirViaje(elegirCliente(scanner));
 
                     }
                     break;
@@ -40,9 +44,10 @@ public class OpcionesCliente extends Formulario{
 
     private Viaje pedirViaje(Cliente unCliente){
         return unCliente.pedirViaje(
-                Scanner.getLong("Destino en X: \t"),
-                Scanner.getLong("Destino en Y: \t"),
-                Scanner.getInt("\n"+"Cantidad de pasajeros: \t"));
+                scanner.getLong("Destino en X: \t"),
+                scanner.getLong("Destino en Y: \t"),
+                scanner.getInt("\n"+"Cantidad de pasajeros: \t"),
+                scanner);
     }
 
     @Override
