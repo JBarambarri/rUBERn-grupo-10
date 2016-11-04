@@ -35,7 +35,4 @@ public class GestionEconomica {
         cliente.getTarjeta().setSaldo(costoViaje);
     }
 
-    public double getCostoViaje() {
-        return costoViaje;
-    }
 }

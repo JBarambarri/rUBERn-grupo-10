@@ -19,14 +19,6 @@ public class Cliente {
         return nombre;
     }
 
-    public Coordenada getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(Coordenada ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
     public Tarjeta getTarjeta() {
         return tarjeta;
     }

@@ -69,7 +69,7 @@ public abstract class Formulario {
 
     Cliente elegirCliente(Scanner unScanner){
         BaseDeDatos.mostrarClientes();
-        int i = unScanner.getInt("Ingrese la opcion correspondiente.\t");
+        int i = unScanner.getInt("Ingrese la opcion correspondiente:\t");
 
         while(true){
             try{

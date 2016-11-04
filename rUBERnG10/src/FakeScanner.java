@@ -22,8 +22,6 @@ public class FakeScanner implements Scanner{
     public int getInt(String msg) {
         intCount++;
         return ints[intCount];
-
-
     }
 
     @Override

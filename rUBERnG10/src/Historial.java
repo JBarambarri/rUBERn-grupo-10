@@ -18,7 +18,6 @@ public class Historial {
 
 
     private static void historialCliente(int i, Cliente unCliente) {
-        new HacerTiempo(10);
         Viaje viaje = BaseDeDatos.viajesRealizados.get(i).getViaje();
         System.out.println(
             "\nCodigo unico del viaje: " + viaje.getCodigoViaje() + "\n" + "Pago" + "\n" +
@@ -31,6 +30,7 @@ public class Historial {
             viaje.getJornada().getCoordenadaFinal().getCoordenadaX() + "," +
             + viaje.getJornada().getCoordenadaFinal().getCoordenadaY() + ")\n" +
             round(viaje.getJornada().getDistancia()/100) + "$" + "\n");
+        new HacerTiempo(10);
 
     }
 
@@ -48,7 +48,6 @@ public class Historial {
 
 
     private static void historialChofer(int i, Chofer unChofer) {
-        new HacerTiempo(10);
         Viaje viaje = BaseDeDatos.viajesRealizados.get(i).getViaje();
         System.out.println(
                 "Codigo unico del viaje: " + viaje.getCodigoViaje() + "\n" + "Cobro" + "\n" +
@@ -61,6 +60,7 @@ public class Historial {
                 viaje.getJornada().getCoordenadaFinal().getCoordenadaX() + "," +
                 + viaje.getJornada().getCoordenadaFinal().getCoordenadaY() + ")\n" +
                 round((viaje.getJornada().getDistancia()/100)*0.9) + "$" + "\n");
+        new HacerTiempo(10);
 
     }
 }

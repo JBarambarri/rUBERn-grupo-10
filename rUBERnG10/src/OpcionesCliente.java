@@ -44,7 +44,7 @@ public class OpcionesCliente extends Formulario{
 
     private Viaje pedirViaje(Cliente unCliente){
         return unCliente.pedirViaje(
-                scanner.getLong("Destino en X: \t"),
+                scanner.getLong("\nDestino en X: \t"),
                 scanner.getLong("Destino en Y: \t"),
                 scanner.getInt("\n"+"Cantidad de pasajeros: \t"),
                 scanner);

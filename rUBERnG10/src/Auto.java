@@ -16,9 +16,6 @@ public class Auto {
         return marca;
     }
 
-    public int getCapacidadMaxima() {
-        return capacidadMaxima;
-    }
 
     public Categoria getCategoria() {
         return categoria;

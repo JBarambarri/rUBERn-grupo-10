@@ -43,10 +43,6 @@ public class Chofer {
         this.estado = estado;
     }
 
-    public void setCoordenada(Coordenada coordenada) {
-        this.coordenada = coordenada;
-    }
-
     public void agregarSaldo(double cantidad) {
         saldo += cantidad;
     }
